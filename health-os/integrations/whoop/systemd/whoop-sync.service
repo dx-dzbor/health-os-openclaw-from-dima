@@ -1,0 +1,19 @@
+[Unit]
+Description=WHOOP Sync for Health OS
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+# Edit: set your username and project path
+User=%u
+WorkingDirectory=%h/health-os
+ExecStart=%h/health-os/.venv/bin/python %h/health-os/integrations/whoop/sync.py --days 2
+StandardOutput=append:%h/health-os/data/integrations/whoop/sync.log
+StandardError=append:%h/health-os/data/integrations/whoop/sync-error.log
+
+# Environment
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

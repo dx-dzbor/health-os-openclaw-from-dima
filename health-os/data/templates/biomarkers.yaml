@@ -1,0 +1,207 @@
+# Biomarkers Database
+# ===================
+# Updated by: @analyst agent
+# Consumed by: @cmo agent
+#
+# Reference: Attia optimal values (Medicine 3.0), NOT lab "normal" ranges.
+
+metadata:
+  last_updated: null
+  next_labs_due: null  # Recommendation: update labs every 3-6 months
+  lab_source: null  # InsideTracker, LabCorp, Quest, etc.
+  note: null
+
+# === CARDIOVASCULAR (Four Horsemen #1: ASCVD) ===
+cardiovascular:
+  apob:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: "<60"  # Centenarian target
+    status: null  # optimal | borderline | above_optimal | concerning
+    history: []
+
+  lp_a:
+    value: null
+    unit: "nmol/L"
+    attia_optimal: "<75"  # Genetic, mostly immutable
+    status: null
+    history: []
+
+  triglycerides:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: "<100"
+    status: null
+    history: []
+
+  hdl:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: ">60"
+    status: null
+    history: []
+
+  non_hdl_c:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: "<100"
+    status: null
+    history: []
+
+# === METABOLIC (Four Horsemen #4: Metabolic Dysfunction) ===
+metabolic:
+  hba1c:
+    value: null
+    unit: "%"
+    attia_optimal: "<5.4"
+    status: null
+    history: []
+
+  fasting_glucose:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: "<90"
+    status: null
+    history: []
+
+  fasting_insulin:
+    value: null
+    unit: "uIU/mL"
+    attia_optimal: "<8"
+    status: null
+    history: []
+
+  homa_ir:
+    value: null
+    calculated: true  # (glucose * insulin) / 405
+    attia_optimal: "<1.0"
+    status: null
+    history: []
+
+  uric_acid:
+    value: null
+    unit: "mg/dL"
+    attia_optimal: "<6"
+    status: null
+    history: []
+
+  alt:
+    value: null
+    unit: "U/L"
+    attia_optimal: "<30"  # Fatty liver risk if elevated
+    status: null
+    history: []
+
+# === INFLAMMATION ===
+inflammation:
+  hscrp:
+    value: null
+    unit: "mg/L"
+    attia_optimal: "<1.0"
+    status: null
+    history: []
+
+  homocysteine:
+    value: null
+    unit: "umol/L"
+    attia_optimal: "<10"
+    status: null
+    history: []
+
+# === HORMONAL ===
+hormonal:
+  testosterone_total:
+    value: null
+    unit: "ng/dL"
+    attia_optimal: "500-800"  # Male reference
+    status: null
+    history: []
+
+  testosterone_free:
+    value: null
+    unit: "pg/mL"
+    attia_optimal: ">100"  # Male reference
+    status: null
+    history: []
+
+  shbg:
+    value: null
+    unit: "nmol/L"
+    attia_optimal: "20-50"
+    status: null
+    history: []
+
+  cortisol_am:
+    value: null
+    unit: "ug/dL"
+    attia_optimal: "10-20"
+    status: null
+    history: []
+
+# === FITNESS (Centenarian Decathlon) ===
+fitness:
+  vo2_max:
+    value: null
+    unit: "ml/kg/min"
+    source: null
+    percentile: null
+    glideslope:
+      current_age: null
+      projected_90: null
+      target_90: 30  # Minimum for functional independence
+      gap: null
+    status: null
+    history: []
+
+# === BODY COMPOSITION ===
+body_composition:
+  weight:
+    value: null
+    unit: "kg"
+    goal: null
+    source: null
+
+  body_fat:
+    value: null
+    unit: "%"
+    source: null
+    attia_optimal: "<20%"  # For men; <28% for women
+    status: null
+
+  lean_body_mass:
+    value: null
+    unit: "kg"
+    goal: "preserve during cut"
+
+  almi:
+    value: null  # Needs DEXA
+    unit: "kg/m²"
+    percentile: null
+    attia_optimal: ">75th percentile"
+    status: null
+    note: "DEXA needed for accurate ALMI"
+    history: []
+
+  visceral_fat:
+    value: null
+    unit: "lbs"
+    attia_optimal: "<1 lb"
+    status: null
+    history: []
+
+  bone_density_z_score:
+    value: null
+    unit: "Z-score"
+    attia_optimal: ">0"
+    status: null
+    history: []
+
+# === CRITICAL ALERTS ===
+# Auto-populated by @analyst when critical values detected
+alerts: []
+# Example:
+# - date: "2026-01-15"
+#   marker: "alt"
+#   value: 95
+#   severity: "CRITICAL_ALERT"
+#   message: "ALT > 3x upper limit - immediate liver evaluation needed"

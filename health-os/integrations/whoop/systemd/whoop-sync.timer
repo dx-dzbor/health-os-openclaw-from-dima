@@ -1,0 +1,11 @@
+[Unit]
+Description=Run WHOOP Sync every 12 hours
+
+[Timer]
+# Run at 08:00 and 20:00 server time
+OnCalendar=*-*-* 08:00:00
+OnCalendar=*-*-* 20:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

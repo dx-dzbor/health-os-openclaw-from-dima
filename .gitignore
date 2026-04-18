@@ -1,0 +1,11 @@
+# Personal data (do not commit)
+health-os/data/strategic/
+health-os/data/tactical/
+health-os/data/integrations/
+
+# Keep templates + knowledge tracked
+!health-os/data/templates/
+!health-os/data/knowledge/
+
+# Local OS noise
+.DS_Store

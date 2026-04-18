@@ -1,0 +1,214 @@
+# User Profile
+# ============
+# Fill this file with your data.
+# Strategist uses it to calculate TDEE and macros.
+#
+# Last updated: null
+
+personal:
+  age: null  # years
+  sex: null  # male | female
+  height_cm: null
+  activity_level: null
+  timezone: null  # e.g. America/New_York, Europe/London, Asia/Tokyo
+  # Activity level options:
+  #   sedentary        - office work, <5000 steps/day
+  #   lightly_active   - light workouts 1-3x/week
+  #   moderately_active - moderate workouts 3-5x/week
+  #   very_active      - intense workouts 6-7x/week
+  #   extra_active     - professional athlete / physical labor
+
+measurements:
+  current_weight_kg: null
+  goal_weight_kg: null
+  body_fat_percent: null  # visual estimate or DEXA/Whoop
+  lean_body_mass_percent: null
+
+physique:
+  somatotype: null
+  # Options: ectomorph, mesomorph, endomorph, ecto_mesomorph, meso_endomorph, endo_ectomorph
+
+  assessment_date: null
+
+  proportions:
+    shoulders_vs_hips: null  # wider | even | narrower
+    limbs_vs_torso: null  # proportional | long_limbs | short_limbs
+
+  muscle_development:
+    overall: null  # undeveloped | moderate | well_developed
+    strong_points: []
+    # Examples: [biceps_peak, lats_width, quads, glutes]
+    weak_points: []
+    # Examples: [chest_definition, mid_back_thickness, medial_delts]
+
+  focus_areas: []
+    # Hypertrophy priorities
+    # Examples: [upper_chest, medial_delts, core_transverse, glutes]
+
+  posture_notes: []
+    # Examples:
+    # - "Upper cross syndrome (desk work)"
+    # - "Anterior pelvic tilt"
+
+  mobility_work_needed: []
+    # Examples: [thoracic_extension, hip_flexors, ankle_dorsiflexion]
+
+biometrics:
+  vo2_max: null  # ml/kg/min
+  resting_heart_rate: null  # bpm
+
+goals:
+  primary: null
+  # Options:
+  #   lose_weight      - deficit 15-20%
+  #   lose_weight_slow - deficit 10%
+  #   maintain         - maintenance
+  #   gain_muscle      - surplus 10%
+  #   recomp           - maintenance + high protein
+
+  target_date: null  # YYYY-MM-DD, optional
+  rate: null  # slow | moderate | aggressive (only for lose_weight)
+
+preferences:
+  diet_style: null
+  # Options:
+  #   flexible    - IIFYM, no restrictions
+  #   low_carb    - <100g carbs
+  #   high_protein - protein emphasis
+  #   vegetarian  - no meat
+  #   vegan       - no animal products
+
+  meal_frequency: null  # meals per day (3-5)
+  cooking_willingness: null
+  # Options:
+  #   none     - delivery and ready-to-eat only
+  #   minimal  - microwave, assembly
+  #   moderate - simple meals
+  #   enjoys   - likes cooking
+
+  # === TRE (Time-Restricted Eating) ===
+  tre:
+    enabled: false  # true to enable tracking
+    target_window_hours: null
+    # Recommendations:
+    #   8-10 hours - optimal (Satchin Panda)
+    #   10-12 hours - moderate restriction
+    #   < 8 hours - only under specialist supervision
+    target_sleep_distance_min: null
+    # Minimum 120 min (2 hours) between last meal and sleep
+    # Ideal: 180 min (3 hours)
+
+constraints:
+  allergies: []
+  # Examples: [lactose, gluten, nuts, shellfish]
+
+  dislikes: []
+  # Examples: [mushrooms, liver, fish]
+
+  medical: []
+  # Examples: [diabetes_type2, PCOS, hypothyroid]
+  # Affects recommendations but does NOT replace a doctor!
+
+# === FEMALE CYCLE (optional) ===
+# Fill in if you want cycle syncing
+female_cycle:
+  tracking: false  # true | false
+  cycle_length: 28  # days
+  last_period_start: null  # YYYY-MM-DD
+  # When tracking: true, coach will account for luteal phase
+
+# === HISTORY (optional, for context) ===
+history:
+  previous_attempts: null
+  # Example: "Tried keto for 6 months, broke down on sweets"
+
+  what_worked: null
+  # Example: "Eating 4 meals a day reduced binge episodes"
+
+  what_failed: null
+  # Example: "Strict restrictions, cheat meals turned into binges"
+
+# === TRAINING ===
+training:
+  experience_level: null
+  # Options:
+  #   beginner       - <1 year of regular training
+  #   intermediate   - 1-3 years
+  #   advanced       - 3+ years
+
+  access: []
+  # Options:
+  #   bodyweight       - bodyweight only
+  #   home_dumbbells   - dumbbells at home
+  #   commercial_gym   - full gym
+
+  days_available: []
+  # ISO weekdays: 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat, 7=Sun
+
+  time_limit_min: null
+  # Max workout duration in minutes
+
+  injuries: []
+  # Examples: [lower_back, shoulder, knee]
+  # Used for exercise substitutions
+
+  # === SAFETY PROTOCOLS ===
+  last_training_date: null  # YYYY-MM-DD, for novice protocol
+  # If null or >14 days ago → novice protocol activates
+
+  vulnerable_areas: []
+  # Areas requiring caution (not injuries, but risk)
+  # Examples: [lower_back, rotator_cuff, knee]
+  # New exercises for these areas → novice protocol
+
+  active_discomforts: []
+  # Current temporary restrictions
+  # Format:
+  #   - area: lower_back
+  #     level: 2  # 1-4, see training-science
+  #     since: 2025-01-25
+  #     trigger: deadlift
+  #     modifications:
+  #       avoid: [barbell_squat, deadlift]
+  #       substitute_with: [leg_press, hip_thrust_machine]
+  #       reduce_load: 20%
+  #     review_date: 2025-02-01
+  #     notes: "After long car ride"
+
+  preferences:
+    likes: []
+    # Examples: [deadlift, pull_ups, squats]
+
+    dislikes: []
+    # Examples: [running, burpees, lunges]
+
+# === GOAL MODES ===
+# Weight 1-5 determines priority. Higher = more important.
+modes:
+  cognitive_performance:
+    weight: null  # 1-5
+    work_type: null  # knowledge_worker | creative | physical | mixed
+    peak_hours: []  # e.g. [9, 10, 11, 12, 14, 15, 16, 17]
+    priorities: []  # e.g. [stable_energy, focus, processing_speed]
+
+  body_composition:
+    weight: null
+    focus: null  # e.g. maintain_muscle_cognitive_first
+
+  longevity:
+    weight: null
+
+  athletic_performance:
+    weight: null
+
+# === COGNITIVE SETTINGS ===
+cognitive:
+  caffeine:
+    typical_times: []  # e.g. [morning, lunch]
+    cutoff_hours_before_sleep: null  # e.g. 8
+
+  interventions_interested: []
+  # Options: cold_exposure_morning, post_meal_walk, nsdr_afternoon
+
+notes: |
+  Add any personal notes or context here.

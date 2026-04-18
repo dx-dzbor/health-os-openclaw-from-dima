@@ -1,0 +1,85 @@
+# Genetics Database
+# =================
+# Static data - populated once from genetic testing (23andMe, Nebula, etc.)
+# Consumed by: @cmo agent for risk stratification
+
+metadata:
+  source: null  # 23andMe, Nebula Genomics, etc.
+  test_date: null
+
+# === HIGH IMPACT (Materially affects strategy) ===
+high_impact:
+  apoe:
+    genotype: null  # E2/E2, E2/E3, E2/E4, E3/E3, E3/E4, E4/E4
+    risk_level: null  # low | moderate | elevated | high
+    implications: []
+    # E3/E4 or E4/E4 examples:
+    # - "ApoB target: <40 mg/dL (aggressive)"
+    # - "Saturated fat limit: <10g/day"
+    # - "Cardio priority: elevated (neuroprotective)"
+    # - "Consider earlier cognitive screening"
+
+  lp_a_genetic:
+    # Lp(a) is 90% genetic, testing once is enough
+    elevated: null  # true | false
+    risk_level: null
+    implications: []
+    # If elevated:
+    # - "Cannot lower with lifestyle"
+    # - "Focus on aggressive LDL-C/ApoB management"
+    # - "Consider Lp(a)-specific therapies when available"
+
+# === METABOLIC ===
+metabolic:
+  fto_obesity:
+    genotype: null  # TT, AT, AA
+    risk_level: null  # low | moderate | elevated
+    implications: []
+
+  mc4r:
+    genotype: null
+    risk_level: null
+    implications: []
+
+  tcf7l2_diabetes:
+    genotype: null
+    risk_level: null
+    implications: []
+
+# === NUTRIENT METABOLISM ===
+nutrient_metabolism:
+  mthfr:
+    genotype: null  # C677T, A1298C variants
+    risk_level: null
+    implications: []
+    # Homozygous C677T:
+    # - "Consider methylated B vitamins"
+    # - "Monitor homocysteine closely"
+
+  cyp1a2_caffeine:
+    genotype: null  # Fast | Slow metabolizer
+    implications: []
+    # Slow metabolizer:
+    # - "Limit caffeine to morning only"
+    # - "CVD risk with >2 cups/day"
+
+  vdr_vitamin_d:
+    genotype: null
+    implications: []
+
+# === TRAINING RESPONSE ===
+training_response:
+  actn3_power:
+    genotype: null  # RR, RX, XX
+    implications: []
+    # RR: Power-oriented
+    # XX: Endurance-oriented
+
+  col1a1_injury:
+    genotype: null
+    implications: []
+    # Risk allele: Higher tendon/ligament injury risk
+
+# === NOTES ===
+notes: |
+  Add any genetic counselor notes or special considerations here.
